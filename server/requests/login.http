@@ -1,0 +1,36 @@
+### LOGIN
+
+POST http://{{HOST}}/login
+Content-Type: application/json
+
+{
+	"email": "user1@email.com",
+	"password": "123456"
+}
+
+
+{% 
+local body = context.json_decode(context.result.body)
+context.set_env("BEARER_TOKEN", body.token)
+%}
+
+### SIGNUP
+
+POST http://{{HOST}}/signup
+Content-Type: application/json
+
+{
+	"email": "user1@email.com",
+	"password": "123456"
+}
+
+### FORCE CHANGE PASSWORD
+
+POST http://{{HOST}}/admin/change-user-password
+Content-Type: application/json
+Authorization: Bearer {{API_ADMIN_AUTHORIZATION}}
+
+{
+	"email": "user1@email.com",
+	"newPassword": "1234567"
+}
