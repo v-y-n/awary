@@ -1,0 +1,13 @@
+server/node_modules
+server/dist
+server/db
+server/db-test
+server/conf.env
+server/requests/.env
+
+web-app/node_modules
+web-app/build
+
+docs/site
+
+.nvimrc
